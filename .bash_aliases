@@ -33,3 +33,8 @@ alias open='xdg-open'
 # Time wasters:
 alias tron='ssh sshtron.zachlatta.com'
 alias nethack='ssh nethack@nethack.alt.org'
+
+# Ubuntu update and clean
+alias update='sudo apt update && sudo apt upgrade'
+alias clean='sudo apt autoremove && sudo apt autoclean'
+
