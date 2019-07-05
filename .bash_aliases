@@ -6,7 +6,7 @@ alias gti='git'
 alias tmux='tmux -2'
 
 # VPN home
-alias sshome='sudo openvpn --config /etc/openvpn/client/openvpn.ovpn'
+alias sshome='sudo openvpn --config /etc/openvpn/client/sshome.ovpn'
 
 # source bashfile
 alias rc='source ~/.bashrc'
