@@ -5,8 +5,9 @@ alias dc='cd'
 alias gti='git'
 alias tmux='tmux -2'
 
-# VPN home
+# VPN
 alias sshome='sudo openvpn --config /etc/openvpn/client/sshome.ovpn'
+alias sscap='sudo openvpn --config /etc/openvpn/client/capital.ovpn'
 
 # source bashfile
 alias rc='source ~/.bashrc'
