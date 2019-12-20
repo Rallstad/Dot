@@ -1,0 +1,12 @@
+# Adding go to path
+export PATH=$PATH:/usr/local/go/bin
+
+# Setup for Go
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+
+
+# Fingerprint function for showing md5 fingerprint of an SSH key.
+# Takes the private or public file as parameter.
+function fingerprint() { ssh-keygen -lf $1 -E md5; }
+
