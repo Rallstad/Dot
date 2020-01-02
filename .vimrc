@@ -8,6 +8,7 @@ call plug#end()
 " Default stuff
 set smarttab
 set autoindent
+set expandtab
 syntax on
 " Set autoindent, tabstop, shiftwidth, expandtab and cursorcolumn in yaml files
 autocmd FileType yaml setlocal ai ts=2 sw=2 et cuc
