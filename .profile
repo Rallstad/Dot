@@ -25,10 +25,3 @@ fi
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
-
-# create new resolution 1600 x 900
-# create new resolution 1920 x 1080
-xrandr --newmode "1600x900" 118.25 1600 1696 1856 2112 900 903 908 934 -hsync +vsync
-xrandr --newmode "1920x1080" 173.00 1920 2048 2248 2576 1080 1083 1088 1120 -hsync +vsync
-xrandr --addmode eDP-1-1 "1600x900"
-xrandr --addmode eDP-1-1 "1920x1080"
