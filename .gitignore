@@ -1,0 +1,5 @@
+# ignore .git folders
+.git/
+#.gitignore
+# Ignore vim plugin folder
+.vim/plugins/
