@@ -23,17 +23,8 @@ HISTFILESIZE=2000
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# If set, the pattern "**" used in a pathname expansion context will
-# match all files and zero or more directories and subdirectories.
-#shopt -s globstar
-
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
-# set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
-fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
@@ -43,6 +34,7 @@ esac
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
+# LIES, COLOR IS BETTER!
 force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
@@ -57,9 +49,26 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1="\[\033[0;31m\]\342\224\214\342\224\200\$([[ \$? != 0 ]] && echo \"[\[\033[0;31m\]\342\234\227\[\033[0;37m\]]\342\224\200\")[$(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]root\[\033[01;33m\]@\[\033[01;96m\]\h'; else echo '\[\033[0;39m\]\u\[\033[01;33m\]@\[\033[01;96m\]\h'; fi)\[\033[0;31m\]]\342\224\200[\[\033[0;32m\]\w\[\033[0;31m\]]\n\[\033[0;31m\]\342\224\224\342\224\200\342\224\200\342\225\274 \[\033[0m\]\[\e[01;33m\]\\$\[\e[0m\]"
+    # Start of prompt up to last command check:
+    PS1="\e[0;31m┌──[\e[m"
+    # Check last command, print green check or red cross:
+    PS1+="\`if [ \$? = 0 ]; then echo \[\e[32m\]✔ \[\e[0m\]; else echo \[\e[31m\]✘ \[\e[0m\]; fi\`"
+    # Finish the bracket for the last command sign, then start user bracket :
+    PS1+="\e[0;31m]──[\e[0m"
+    # If root, red username, else green?
+    PS1+="\`if [[ ${EUID} == 0 ]]; then echo \[\e[31m\]\u\[\e[0m\]; else echo \[\e[32m\u\[\e[0m\]; fi\`"
+    # Follow with @ sign, yellow
+    PS1+="\e[01;33m@\e[m"
+    # Hostname follows in cyan 
+    PS1+="\e[0;36m\h\e[m"
+    # Finish user bracket, add spacing and start path bracket
+    PS1+="\e[0;31m]─[\e[m"
+    # Path in green(?)
+    PS1+="\e[0;32m\w\e[m"
+    # Finish path bracket, newline, symbol and prompt
+    PS1+="\e[0;31m]\n└──\e[m \$ "
 else
-    PS1='┌──[\u@\h]─[\w]\n└──╼ \$ '
+    PS1='┌──[\u@\h]─[\w]\n└── \$ '
 fi
 
 # Set 'man' colors
