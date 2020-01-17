@@ -32,16 +32,6 @@ alias open='xdg-open'
 alias tron='ssh sshtron.zachlatta.com'
 alias nethack='ssh nethack@nethack.alt.org'
 
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-
-
-***REMOVED***
-***REMOVED***
-
 # Other shortcuts
 alias ssll='ssh-add -L'
 

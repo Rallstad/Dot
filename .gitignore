@@ -3,3 +3,5 @@
 #.gitignore
 # Ignore vim plugin folder
 .vim/plugins/
+# Ignore location spesific aliases
+.bash_alias
