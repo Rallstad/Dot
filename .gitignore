@@ -1,7 +1,9 @@
-# ignore .git folders
+# ignore .git folder
 .git/
-#.gitignore
-# Ignore vim plugin folder
-.vim/plugins/
+
+# Ignore everything in .vim folder, exept for Vim Plugin Manager
+.vim/*
+!.vim/autoload/plug.vim
+
 # Ignore location spesific aliases
 .bash_alias
