@@ -49,24 +49,26 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
+    # Had to put escaped brackets on either side of the actual text that will be shown in the prompt. 
+    # As a result, it looks more complicated with all the \[ and \]
     # Start of prompt up to last command check:
-    PS1="\e[0;31m┌──[\e[m"
+    PS1="\[\e[0;31m\]┌──\[[\e[m\]"
     # Check last command, print green check or red cross:
     PS1+="\`if [ \$? = 0 ]; then echo \[\e[32m\]✔ \[\e[0m\]; else echo \[\e[31m\]✘ \[\e[0m\]; fi\`"
     # Finish the bracket for the last command sign, then start user bracket :
-    PS1+="\e[0;31m]──[\e[0m"
+    PS1+="\[\e[0;31m\]]──[\[\e[0m\]"
     # If root, red username, else green?
     PS1+="\`if [[ ${EUID} == 0 ]]; then echo \[\e[31m\]\u\[\e[0m\]; else echo \[\e[32m\u\[\e[0m\]; fi\`"
     # Follow with @ sign, yellow
-    PS1+="\e[01;33m@\e[m"
+    PS1+="\[\e[01;33m\]@\[\e[m\]"
     # Hostname follows in cyan 
-    PS1+="\e[0;36m\h\e[m"
+    PS1+="\[\e[0;36m\]\h\[\e[m\]"
     # Finish user bracket, add spacing and start path bracket
-    PS1+="\e[0;31m]─[\e[m"
+    PS1+="\[\e[0;31m\]]─[\[\e[m\]"
     # Path in green(?)
-    PS1+="\e[0;32m\w\e[m"
+    PS1+="\[\e[0;32m\]\w\[\e[m\]"
     # Finish path bracket, newline, symbol and prompt
-    PS1+="\e[0;31m]\n└──$(tput sgr0) \$ "
+    PS1+="\[\e[0;31m\]]\n└──\[\e[m\] \$ "
 else
     PS1='┌──[\u@\h]─[\w]\n└── \$ '
 fi
