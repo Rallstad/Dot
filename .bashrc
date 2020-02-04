@@ -54,7 +54,7 @@ if [ "$color_prompt" = yes ]; then
     # Start of prompt up to last command check:
     PS1="\[\e[0;31m\]┌──\[[\e[m\]"
     # Check last command, print green check or red cross:
-    PS1+="\`if [ \$? = 0 ]; then echo \[\e[32m\]✔ \[\e[0m\]; else echo \[\e[31m\]✘ \[\e[0m\]; fi\`"
+    PS1+="\`if [ \$? = 0 ]; then echo \[\e[32m\]✔ \[\e[0m\]; else echo \[\e[31m\]❌ \[\e[0m\]; fi\`"
     # Finish the bracket for the last command sign, then start user bracket :
     PS1+="\[\e[0;31m\]]──[\[\e[0m\]"
     # If root, red username, else green?
