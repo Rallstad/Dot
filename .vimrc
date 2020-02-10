@@ -6,6 +6,7 @@ Plug 'tpope/vim-sensible'
 Plug 'Glench/Vim-Jinja2-Syntax'
 call plug#end()
 " Default stuff
+colorscheme elflord
 set smarttab
 set autoindent
 set expandtab
