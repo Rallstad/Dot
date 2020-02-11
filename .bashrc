@@ -103,8 +103,8 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# Laptop spesific aliases, not stored on github
-# Stored locally in .bash_alias
+# Computer spesific aliases, not stored on github for whatever reasons
+# Stored locally in .bash_alias, and that is .gitignore'd
 
 if [ -f ~/.bash_alias ]; then
     . ~/.bash_alias
