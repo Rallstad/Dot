@@ -26,10 +26,6 @@ alias dc='cd'
 alias gti='git'
 alias tmux='tmux -2'
 
-# VPN
-alias sshome='sudo openvpn --config /etc/openvpn/client/sshome.ovpn'
-alias sscap='sudo openvpn --config /etc/openvpn/client/capital.ovpn'
-
 # source bashfile
 alias rc='source ~/.bashrc'
 
@@ -55,8 +51,3 @@ alias nethack='ssh nethack@nethack.alt.org'
 
 # Other shortcuts
 alias ssll='ssh-add -L'
-
-# Ubuntu update and clean
-alias update='sudo apt update && sudo apt upgrade'
-alias clean='sudo apt autoremove && sudo apt autoclean'
-
