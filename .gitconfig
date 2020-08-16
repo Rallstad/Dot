@@ -4,7 +4,7 @@
         name = Celebrian
 	username = celebrian
 	email = per_kb@hotmail.com
-	signingkey = 545D96DB2BBA85F5
+	signingkey = C835C26E7D8CB3FEBA586AB7545D96DB2BBA85F5
 
 # Main editor vim
 # Convert CRLF to LF on commit, in case it's from a windows machine
