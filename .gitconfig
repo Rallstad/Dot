@@ -1,0 +1,25 @@
+# User info
+# Name, username, email and GPG key to sign commits
+[user]
+        name = Celebrian
+	username = celebrian
+	email = per_kb@hotmail.com
+	signingkey = 545D96DB2BBA85F5
+
+# Main editor vim
+# Convert CRLF to LF on commit, in case it's from a windows machine
+[core]
+	editor = vim
+        autocrlf = input
+
+# Actually do the suggested command after misstyping it, after a 3 second grace period
+[help]
+        autocorrect = 30
+
+# Use GPG signing on commits
+[commit]
+	gpgsign = true
+
+# Push simple, in case there is an old git version
+[push]
+	default = simple
