@@ -5,6 +5,8 @@ export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
+# Export terminal for gpg to promt for password
+export GPG_TTY=$(tty)
 
 # Fingerprint function for showing md5 fingerprint of an SSH key.
 # Takes the private or public file as parameter.
